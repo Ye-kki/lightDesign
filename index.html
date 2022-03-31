@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body onload="init()">
+  <div class="background">
+    <div class="menu_title">Light design
+    </div>
+    <div class="menu">
+      <input type="radio" name="slide" id="slide01">
+      <input type="radio" name="slide" id="slide02" checked>
+      <!-- <input type="radio" name="slide" id="slide03"> -->
+
+      <div class="slidewrap">
+        <ul class="menulist">
+
+          <li>
+            <div class="container">
+              <div name="menu_name">Mood Picker</div>
+              <input type="file" id="file-input" accept="image/*">
+              <label for="file-input">Upload Image</label>
+              <div class="canvas-container">
+                <img src="icon/upload_image.png" id="upload_image">
+                <canvas id="canvas" onclick="sendRgbColor()"></canvas>
+              </div>
+              <div id="output"></div>
+            </div>
+          </li>
+
+          <li class="wrap">
+            <div name="menu_name">Color Picker</div>
+            <div class="half" onclick="sendRgbColor()">
+              <div class="colorPicker"></div>
+            </div>
+
+            <div class="rgb">
+              <div id="red_text">R : </div>
+              <input name="rgbInput" id="redInput" onchange="sendRgbColor()"></input>
+              <div id="green_text">G : </div>
+              <input name="rgbInput" id="greenInput" onchange="sendRgbColor()"></input>
+              <div id="blue_text">B : </div>
+              <input name="rgbInput" id="blueInput" onchange="sendRgbColor()"></input>
+              <button id="rgbset_button" onclick="sendRgbColor()">SET</button>
+            </div>
+            <div class="half readout">
+              <div id="hex_text">HEX : </div>
+              <input id="hexInput" onchange="sendRgbColor()"></input>
+              <button id="hexset_button" onclick="sendRgbColor()">SET</button>
+            </div>
+          </li>
+
+          <li>
+              <div name="menu_name">Option</div>
+              <div class = "colorOption">Color option</div>
+              <div class = "optionBox">
+                <div class ="optionName">
+                  <div name="option">rainbow</div>
+                  <div name="option">colorwipe</div>
+                  <div name="option">theaterchase</div>
+                  <div name="option">random</div>
+                </div>
+                <div class = "option_Buttons">
+                  <div class="optionButton" id="1" > </div>
+                  <div class="optionButton" id="2" ></div>
+                  <div class="optionButton" id="3" ></div>
+                  <div class="optionButton" id="4" ></div>
+                </div>
+              </div>
+              <div class = "sensorSwitch">
+                <div>Sensor</div>
+                <input type="button" id="sensorButton" checked>
+              </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <button id="on_button">
+    <img src="icon/onoff.png" id="onoff">
+  </button>
+
+  <div class="bottom">
+    <div class="bottom_menu">
+      <a>
+        <label for="slide01">
+          <img src="icon/image_picker_off.png" id="image_picker_off" name = "bottom_image" >
+        </label>
+      </a>
+      <a>
+        <label for="slide02">
+          <img src="icon/color_picker_off.png" id="color_picker_off" name = "bottom_image" >
+        </label>
+      </a>
+      <a>
+        <label for="slide03">
+          <img src="icon/option_off.png" id="option_off" name = "bottom_image" >
+        </label>
+      </a>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/@jaames/iro@5'></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
+
+<!-- Copyright (c) 2021 by James Daniel (https://codepen.io/rakujira/pen/WZOeNq)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Copyright (c) 2021 by Tian Jiang (https://codepen.io/eidolonsky/pen/vYKVoJx)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+

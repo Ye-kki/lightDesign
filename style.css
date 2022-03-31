@@ -1,0 +1,348 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  line-height: 150%;
+  margin: 0px;
+}
+.background{
+  background: #E0E0E0;
+  height: 85vh;
+  width: 100%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0px -2px 13px;
+}
+
+.menu_title{
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 18px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-family: Arial, Helvetica, sans-serif;
+  color: #858585;
+  background:#ffffff;
+  height: 50px;
+  width: 100%;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0px -2px 15px;
+}
+
+.menu input[name="slide"]{
+  display: none;
+}
+
+[name ="menu_name"]{
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  color: #858585;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+[id="slide01"]:checked ~ .slidewrap .menulist > li {
+  transform: translateX(0%);
+}
+[id="slide02"]:checked ~ .slidewrap .menulist > li {
+  transform: translateX(-100%);
+}
+[id="slide03"]:checked ~ .slidewrap .menulist > li {
+  transform: translateX(-200%);
+}
+
+.menu .slidewrap{
+  height: 70vh;
+  width: 46vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.menu .menulist{
+  white-space: nowrap;
+  padding-left: 0px;
+}
+
+.menu .menulist > li{
+  display: inline-flex;
+  vertical-align: top;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.title {
+  font-family: sans-serif;
+  line-height: 24px;
+  display: block;
+  padding: 8px 0;
+}
+
+.rgb{
+  padding-top: 4%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-weight: bold;
+  font-size: 15px;
+  color: #858585;
+}
+.readout {
+  padding-top: 3%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: #858585;
+}
+.rgb > input{
+  display: flex;
+  height:22px;
+  width:30px;
+  margin-inline: 5px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  margin-right: 10px;
+  font-size: 12px;
+  color: #858585;
+}
+
+#rgbset_button{
+  display: flex;
+  height:28px;
+  width:50px;
+  border-radius: 14px;
+  text-align:center;
+  background:#858585;
+  border: 1px solid #858585;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  margin-left: 5px;
+  
+}
+#rgbset_button:hover {
+  cursor: pointer;
+  color: #858585;
+  background-color: #ffffff;
+  border: 0px;
+}
+
+#hexInput {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height:22px;
+  width:60px;
+  margin-inline: 5px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  font-size: 15px;
+  color: #858585;
+}
+#hexset_button{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height:28px;
+  width:50px;
+  margin-inline: 10px;
+  border-radius: 14px;
+  text-align:center;
+  background:#858585;
+  border: 1px solid #858585;
+  color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+#hexset_button:hover {
+  cursor: pointer;
+  color: #858585;
+  background-color: #ffffff;
+  border: 0px;
+}
+
+#values {
+ font-family: monospace;
+  line-height: 150%;
+}
+.container, body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.container label {
+  z-index: 5;
+  display: inline-flex;
+  background:#858585;
+  border-radius: 25px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+  height: auto;
+  max-height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+  
+}
+#canvas{
+  z-index: 3;
+}
+label:hover {
+  background-color: #ffffff;
+  color: #858585;
+}
+#output {
+  padding-top: 4%;
+  text-align: center;
+  z-index: 5;
+}
+#output span {
+  font-size: 12px;
+}
+.menu input[id="file-input"]{
+  display: none;
+}
+#on_button{
+  position: absolute;
+  top: 80vh;
+  background-color: #848686;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  box-shadow: 3px 3px 5px 1px rgb(122, 122, 122);
+  border: 0px;
+}
+#onoff{
+  display: block;
+  margin: 0 auto;
+  width: 30px;
+  height: 32px;
+
+}
+#upload_image{
+  position:absolute;
+  width: 100px;
+}
+
+.bottom{
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom_menu{
+  display: inline-flex;
+  align-items: center;
+  height: 10vh;
+}
+.bottom_menu label{
+  display: inline-flex;
+  width: 100%;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.bottom .bottom_menu a{
+  display: inline-flex;
+  justify-content: center;
+  margin: 40px;
+}
+.bottom .bottom_menu img{
+  width: 4.5vh;
+}
+
+.optionBox{
+  width: 70%;
+  height: 30vh;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #858585;
+}
+.colorOption{
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 1px;
+  right: 24%;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  color: #858585;
+}
+.optionName{
+  display:inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.option_Buttons{
+  display:inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+[name ="option"]{
+  display: inline-flex;
+  align-items: center;
+}
+.optionButton {
+  background-color:rgb(255, 255, 255);
+  border: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.sensorSwitch{
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-right: 6px;
+  color: #858585;
+}
+#sensorButton{
+  background-color:rgb(255, 255, 255);
+  border: 0px;
+  width: 35px;
+  height: 35px;
+  border-radius: 17.5px;
+}
