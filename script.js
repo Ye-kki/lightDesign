@@ -13,6 +13,8 @@ var redInput = document.getElementById("redInput");
 var greenInput = document.getElementById("greenInput");
 var blueInput = document.getElementById("blueInput");
 var rgbset_button = document.getElementById("rgbset_button");
+var imageInput = document.getElementById("output");
+
 
 var Socket;
 
@@ -56,15 +58,16 @@ sensorButton.addEventListener('click', function () {
   }
 })
 
-/*on_button.addEventListener('click', function () {
+on_button.addEventListener('click', function () {
   if(on_button.value == '1') on_button.value = '0';
   else on_button.value = '1';
   Socket.send('$' + on_button.value); //onoff 전달 함수
-})*/
+})
 
 function init() {
   Socket = new WebSocket('ws://' + window.location.hostname + ':81/');
 }
+
 function sendRgbColor() { //색상 전달 함수
   Socket.send(document.getElementById("hexInput").value);
   for (var j = 0; j < optionButton.length; j++) {
@@ -114,7 +117,6 @@ rgbset_button.addEventListener('change', function () {
   sendRgbColor();
 });
 
-
 $("#file-input").change(function (e) {
   var file = e.target.files[0]
 
@@ -122,8 +124,7 @@ $("#file-input").change(function (e) {
   reader.onload = fileOnload;
   reader.readAsDataURL(file);
 });
-var canvas = $("#canvas")[0];
-var context = canvas.getContext("2d");
+var canvas = $("#canvas")[0];var context = canvas.getContext("2d");
 var fileLoad = false;
 
 function fileOnload(e) {
@@ -159,8 +160,7 @@ $("#canvas").on("click", function (e) {
   if (fileLoad == true) {
     const i = (y * imgData.width + x) * 4
     var hex = ("000000" + rgbToHex(oData[i], oData[i + 1], oData[i + 2])).slice(-6)
-    $('#output').html("R : " + oData[i] + " G : " + oData[i+1] + " B : " + oData[i+2])
-    //$('#output').html("R : " + oData[i] + " G : " + oData[i+1] + " B : " + oData[i+2] + "</br>" + "HEX : #" + hex + "</br>")
+    $('#output').html("R : " + oData[i] + " G : " + oData[i+1] + " B : " + oData[i+2] + "</br>" + "HEX : #" + hex + "</br>")
     colorPicker.color.hexString = "#" + hex;
   }
 })
